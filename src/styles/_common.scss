@@ -1,8 +1,7 @@
 @import "variables";
+@import "loops";
 
 .calendar {
-  font-size: 30px;
-  font-family: Arial, sans-serif;
   width: 710px;
   margin: 50px auto 0;
   display: flex;
@@ -32,30 +31,5 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-}
-
-@for $i from 1 through 31 {
-  .calendar > :nth-child(#{$i})::after {
-    content: "#{$i}";
-  }
-
-  @if $i >= 28 {
-    .calendar-#{$i} > :nth-child(-n + #{$i}) {
-      display: block;
-    }
-  }
-}
-
-@each $day in $days-list {
-
-  $i: index($days-list, $day);
-
-  .calendar-#{$day} > div:first-child {
-    margin-left: ($i - 1) * 101px;
-  }
-
-  .calendar-#{$day} > div:nth-child(7n + #{8 - $i}) {
-    margin-right: 0;
   }
 }
