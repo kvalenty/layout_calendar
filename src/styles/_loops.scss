@@ -1,12 +1,6 @@
-@for $i from 1 through 31 {
-  .calendar > :nth-child(#{$i})::after {
-    content: "#{$i}";
-  }
-
-  @if $i >= 28 {
-    .calendar-#{$i} > :nth-child(-n + #{$i}) {
-      display: block;
-    }
+@for $i from 28 through 31 {
+  .calendar-#{$i} > :nth-child(-n + #{$i}) {
+    display: block;
   }
 }
 

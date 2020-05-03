@@ -3,6 +3,8 @@
   margin: 50px auto 0;
   display: flex;
   flex-wrap: wrap;
+  
+  counter-reset: dayNum;
 
   > div {
     margin: 0 1px 1px 0;
@@ -27,6 +29,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      counter-increment: dayNum;
+      content: counter(dayNum);
     }
   }
 }
