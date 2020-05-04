@@ -1,18 +1,15 @@
+@import "variables";
+
 @for $i from 28 through 31 {
-  .calendar-#{$i} > :nth-child(-n + #{$i}) {
-    display: block;
+  .calendar-#{$i} > :nth-child(n + #{$i + 1}) {
+    display: none;
   }
 }
 
 @each $day in $days-list {
-
   $i: index($days-list, $day);
 
   .calendar-#{$day} > div:first-child {
     margin-left: ($i - 1) * 101px;
-  }
-
-  .calendar-#{$day} > div:nth-child(7n + #{8 - $i}) {
-    margin-right: 0;
   }
 }
